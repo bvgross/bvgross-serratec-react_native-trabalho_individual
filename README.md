@@ -1,6 +1,6 @@
 # App Clone
 
-## Exercício individual - React-Native
+### Exercício individual - React-Native
 
 #### Exercício realizado na matéria de react-native da Residência em TIC do Serratec
 
