@@ -1,4 +1,4 @@
-import { Image, Text, View } from 'react-native';
+import { Image, Text, TouchableOpacity, View } from 'react-native';
 import { styles } from './styles';
 import grabber from '../../assets/icons/grabber.png';
 import musicProperties from '../../assets/icons/musicProperties.png';
@@ -16,9 +16,11 @@ interface MusicProps {
 export const MusicCard = ({ music }: MusicProps) => {
   return (
     <View style={styles.card}>
-      <View style={styles.cardSection}>
-        <Image source={grabber} style={styles.icon} />
-      </View>
+      <TouchableOpacity>
+        <View style={styles.cardSection}>
+          <Image source={grabber} style={styles.icon} />
+        </View>
+      </TouchableOpacity>
       <Image source={music.image} style={styles.albumImage} />
       <View style={styles.cardSectionMain}>
         <Text style={styles.titulo}>{music.title}</Text>
@@ -28,9 +30,11 @@ export const MusicCard = ({ music }: MusicProps) => {
           <Text style={styles.text}>{music.duration}</Text>
         </View>
       </View>
-      <View style={styles.cardSection}>
-        <Image source={musicProperties} style={styles.icon} />
-      </View>
+      <TouchableOpacity>
+        <View style={styles.cardSection}>
+          <Image source={musicProperties} style={styles.icon} />
+        </View>
+      </TouchableOpacity>
     </View>
   );
 }

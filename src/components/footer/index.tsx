@@ -1,6 +1,6 @@
 import React from 'react';
 import { styles } from './styles';
-import { Image, Text, View } from 'react-native';
+import { Image, Text, TouchableHighlight, View } from 'react-native';
 import playlist from '../../assets/icons/playlist.png';
 import nowPlaying from '../../assets/icons/nowPlaying.png';
 import folder from '../../assets/icons/folders.png';
@@ -19,18 +19,32 @@ export const Footer = ({ screen }: FooterProps) => {
   return (
     <View style={styles.footer}>
       <View style={styles.footerPages}>
-        <View style={screen === "Playlist" ? styles.iconContainerSelected : styles.iconContainer}>
-          <Image
-            source={playlist}
-            style={screen === "Playlist" ? styles.iconImageSelected : styles.iconImage}
-          />
-        </View>
-        <View style={screen === "NowPlayng" ? styles.iconContainerSelected : styles.iconContainer}>
-          <Image
-            source={nowPlaying}
-            style={screen === "NowPlayng" ? styles.iconImageSelected : styles.iconImage}
-          />
-        </View>
+        <TouchableHighlight
+          onPress={() => console.log('Playlist pressed')}
+          underlayColor="#555"
+          activeOpacity={0.9}
+        >
+          <View style={screen === "Playlist" ? styles.iconContainerSelected : styles.iconContainer}>
+            <Image
+              source={playlist}
+              style={screen === "Playlist" ? styles.iconImageSelected : styles.iconImage}
+            />
+          </View>
+        </TouchableHighlight>
+
+        <TouchableHighlight
+          onPress={() => console.log('Now Playing pressed')}
+          underlayColor="#555"
+          activeOpacity={0.9}
+        >
+          <View style={screen === "NowPlayng" ? styles.iconContainerSelected : styles.iconContainer}>
+            <Image
+              source={nowPlaying}
+              style={screen === "NowPlayng" ? styles.iconImageSelected : styles.iconImage}
+            />
+          </View>
+        </TouchableHighlight>
+
         <View style={styles.iconContainer}>
           <Image source={folder} style={styles.iconImage} />
         </View>

@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
     fontWeight: 500,
   },
   header: {
-    paddingTop: 13,
+    paddingTop: 35,
     backgroundColor: "#000000",
     width: "100%",
     padding: 4,

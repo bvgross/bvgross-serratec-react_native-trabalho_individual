@@ -1,4 +1,4 @@
-import { FlatList, Image, Text, TextInput, View } from 'react-native';
+import { FlatList, Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { styles } from './styles';
 import { Footer } from '../../components/footer';
 import search from '../../assets/icons/search.png';
@@ -17,21 +17,32 @@ export const Playlist = () => {
     <View style={styles.container}>
       <View style={styles.header}>
         <View style={styles.headerRow}>
-          <View style={styles.dropdown}>
+          <TouchableOpacity style={styles.dropdown}>
             <Text style={styles.dropdownText}>13. RetroSynth</Text>
             <Image source={dropdowmIcon} style={styles.iconDropdown} />
-          </View>
-          <Image source={close} style={styles.iconImageTop} />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image source={close} style={styles.iconImageTop} />
+          </TouchableOpacity>
         </View>
+
         <View style={styles.headerRow}>
-          <Image source={pause} style={styles.iconDropdown} />
-          <Image source={order} style={styles.iconDropdown} />
+          <TouchableOpacity>
+            <Image source={pause} style={styles.iconDropdown} />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image source={order} style={styles.iconDropdown} />
+          </TouchableOpacity>
           <View style={styles.listSize}>
             <Text style={styles.text}><Text style={styles.textBold}>38</Text> / 74</Text>
             <Text style={styles.text}>⏲ 5:28:07</Text>
           </View>
-          <Image source={save} style={styles.iconDropdown} />
-          <Image source={options} style={styles.iconOptions} />
+          <TouchableOpacity>
+            <Image source={save} style={styles.iconDropdown} />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image source={options} style={styles.iconOptions} />
+          </TouchableOpacity>
         </View>
       </View>
 
