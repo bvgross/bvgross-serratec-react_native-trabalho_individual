@@ -11,26 +11,48 @@ import playlists from '../../assets/icons/allPlaylists.png';
 import search from '../../assets/icons/search.png';
 import bottomSettings from '../../assets/icons/bottomSettings.png';
 
-export const Footer = () => {
+interface FooterProps {
+  screen: string;
+}
 
-  interface icons {
-    name: string,
-    image: any,
-  }
-
+export const Footer = ({ screen }: FooterProps) => {
   return (
     <View style={styles.footer}>
       <View style={styles.footerPages}>
-        <Image source={playlist} style={styles.iconImage} />
-        <Image source={nowPlaying} style={styles.iconImage} />
-        <Image source={folder} style={styles.iconImage} />
-        <Image source={album} style={styles.iconImage} />
-        <Image source={artist} style={styles.iconImage} />
-        <Image source={tag} style={styles.iconImage} />
-        <Image source={playlists} style={styles.iconImage} />
-        <Image source={search} style={styles.iconImage} />
+        <View style={screen === "Playlist" ? styles.iconContainerSelected : styles.iconContainer}>
+          <Image
+            source={playlist}
+            style={screen === "Playlist" ? styles.iconImageSelected : styles.iconImage}
+          />
+        </View>
+        <View style={screen === "NowPlayng" ? styles.iconContainerSelected : styles.iconContainer}>
+          <Image
+            source={nowPlaying}
+            style={screen === "NowPlayng" ? styles.iconImageSelected : styles.iconImage}
+          />
+        </View>
+        <View style={styles.iconContainer}>
+          <Image source={folder} style={styles.iconImage} />
+        </View>
+        <View style={styles.iconContainer}>
+          <Image source={album} style={styles.iconImage} />
+        </View>
+        <View style={styles.iconContainer}>
+          <Image source={artist} style={styles.iconImage} />
+        </View>
+        <View style={styles.iconContainer}>
+          <Image source={tag} style={styles.iconImage} />
+        </View>
+        <View style={styles.iconContainer}>
+          <Image source={playlists} style={styles.iconImage} />
+        </View>
+        <View style={styles.iconContainer}>
+          <Image source={search} style={styles.iconImage} />
+        </View>
       </View>
-      <Image source={bottomSettings} style={styles.iconImage} />
+      <View style={styles.iconContainer}>
+        <Image source={bottomSettings} style={styles.iconImage} />
+      </View>
     </View>
   );
 }

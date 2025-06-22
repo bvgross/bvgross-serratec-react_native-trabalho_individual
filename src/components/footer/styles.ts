@@ -2,30 +2,47 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   footer: {
-    height: 110,
+    height: 85,
     backgroundColor: "#181818",
     width: "100%",
-    paddingHorizontal: 6,
-    paddingVertical: 15,
     flexDirection: "row",
     justifyContent: "space-between",
   },
   icon: {
     color: "#fff",
-    paddingHorizontal: 6,
+    paddingHorizontal: 4,
   },
   footerPages: {
     flexDirection: "row",
-    gap: 22,
   },
   iconImage: {
-    width: 50,
-    height: 50,
+    borderTopColor: "#f9f9f9",
+    width: 35,
+    height: 35,
     tintColor: "#737373",
   },
   iconImageSelected: {
-    width: 50,
-    height: 50,
+    width: 35,
+    height: 35,
     tintColor: "#fefefe"
-  }
+  },
+  iconContainer: {
+    alignItems: "center",
+    justifyContent: "center",
+    borderTopColor: "#181818",
+    borderTopWidth: 3,
+    height: 57,
+    paddingHorizontal: 6,
+  },
+  iconContainerSelected: {
+    alignItems: "center",
+    justifyContent: "center",
+    borderTopColor: "#62fb9c",
+    borderTopWidth: 3,
+    height: 57,
+    paddingHorizontal: 6,
+  },
+  iconImageConfig: {
+    padding: 6,
+  },
 })

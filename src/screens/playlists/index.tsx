@@ -1,4 +1,4 @@
-import { Image, ScrollView, Text, TextInput, View } from 'react-native';
+import { FlatList, Image, Text, TextInput, View } from 'react-native';
 import { styles } from './styles';
 import { Footer } from '../../components/footer';
 import search from '../../assets/icons/search.png';
@@ -8,6 +8,8 @@ import pause from '../../assets/icons/pause.png';
 import order from '../../assets/icons/order.png';
 import save from '../../assets/icons/save.png';
 import options from '../../assets/icons/bottomSettings.png';
+import { MusicCard } from '../../components/musicCard';
+import { music } from './music';
 
 export const Playlist = () => {
 
@@ -29,17 +31,21 @@ export const Playlist = () => {
             <Text style={styles.text}>⏲ 5:28:07</Text>
           </View>
           <Image source={save} style={styles.iconDropdown} />
-          <Image source={options} style={styles.iconDropdown} />
+          <Image source={options} style={styles.iconOptions} />
         </View>
       </View>
 
-      <ScrollView style={styles.scrollView} contentContainerStyle={styles.musicas}>
-        {Array.from({ length: 100 }).map((_, i) => (
-          <Text key={i} style={styles.text}>
-            Item {i + 1}
-          </Text>
-        ))}
-      </ScrollView>
+      <FlatList
+        data={music}
+        keyExtractor={(item, index) => index.toString()}
+        renderItem={({ item }) => {
+          return (
+            <MusicCard music={item} />
+          );
+        }}
+        style={styles.music}
+        showsVerticalScrollIndicator={true}
+      />
       <View style={styles.searchBar}>
         <Image source={search} style={styles.iconImage} />
         <TextInput
@@ -48,7 +54,7 @@ export const Playlist = () => {
           style={styles.searchText}
         />
       </View>
-      <Footer />
+      <Footer screen="Playlist" />
     </View>
   );
 }
