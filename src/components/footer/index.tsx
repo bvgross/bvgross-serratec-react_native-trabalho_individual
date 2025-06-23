@@ -13,59 +13,62 @@ import bottomSettings from '../../assets/icons/bottomSettings.png';
 
 interface FooterProps {
   screen: string;
+  isNowPlaying: boolean;
 }
 
-export const Footer = ({ screen }: FooterProps) => {
+export const Footer = ({ screen, isNowPlaying }: FooterProps) => {
   return (
-    <View style={styles.footer}>
-      <View style={styles.footerPages}>
-        <TouchableHighlight
-          onPress={() => console.log('Playlist pressed')}
-          underlayColor="#555"
-          activeOpacity={0.9}
-        >
-          <View style={screen === "Playlist" ? styles.iconContainerSelected : styles.iconContainer}>
-            <Image
-              source={playlist}
-              style={screen === "Playlist" ? styles.iconImageSelected : styles.iconImage}
-            />
-          </View>
-        </TouchableHighlight>
+    <View style={isNowPlaying ? styles.footerNowPlaying : styles.footer}>
+      <View style={styles.footerPagesContainer}>
+        <View style={styles.footerPages}>
+          <TouchableHighlight
+            onPress={() => console.log('Playlist pressed')}
+            underlayColor="#555"
+            activeOpacity={0.9}
+          >
+            <View style={screen === "Playlist" ? styles.iconContainerSelected : styles.iconContainer}>
+              <Image
+                source={playlist}
+                style={screen === "Playlist" ? styles.iconImageSelected : styles.iconImage}
+              />
+            </View>
+          </TouchableHighlight>
 
-        <TouchableHighlight
-          onPress={() => console.log('Now Playing pressed')}
-          underlayColor="#555"
-          activeOpacity={0.9}
-        >
-          <View style={screen === "NowPlayng" ? styles.iconContainerSelected : styles.iconContainer}>
-            <Image
-              source={nowPlaying}
-              style={screen === "NowPlayng" ? styles.iconImageSelected : styles.iconImage}
-            />
-          </View>
-        </TouchableHighlight>
+          <TouchableHighlight
+            onPress={() => console.log('Now Playing pressed')}
+            underlayColor="#555"
+            activeOpacity={0.9}
+          >
+            <View style={screen === "NowPlaying" ? styles.iconContainerSelected : styles.iconContainer}>
+              <Image
+                source={nowPlaying}
+                style={screen === "NowPlaying" ? styles.iconImageSelected : styles.iconImage}
+              />
+            </View>
+          </TouchableHighlight>
 
-        <View style={styles.iconContainer}>
-          <Image source={folder} style={styles.iconImage} />
+          <View style={styles.iconContainer}>
+            <Image source={folder} style={styles.iconImage} />
+          </View>
+          <View style={styles.iconContainer}>
+            <Image source={album} style={styles.iconImage} />
+          </View>
+          <View style={styles.iconContainer}>
+            <Image source={artist} style={styles.iconImage} />
+          </View>
+          <View style={styles.iconContainer}>
+            <Image source={tag} style={styles.iconImage} />
+          </View>
+          <View style={styles.iconContainer}>
+            <Image source={playlists} style={styles.iconImage} />
+          </View>
+          <View style={styles.iconContainer}>
+            <Image source={search} style={styles.iconImage} />
+          </View>
         </View>
         <View style={styles.iconContainer}>
-          <Image source={album} style={styles.iconImage} />
+          <Image source={bottomSettings} style={styles.iconImage} />
         </View>
-        <View style={styles.iconContainer}>
-          <Image source={artist} style={styles.iconImage} />
-        </View>
-        <View style={styles.iconContainer}>
-          <Image source={tag} style={styles.iconImage} />
-        </View>
-        <View style={styles.iconContainer}>
-          <Image source={playlists} style={styles.iconImage} />
-        </View>
-        <View style={styles.iconContainer}>
-          <Image source={search} style={styles.iconImage} />
-        </View>
-      </View>
-      <View style={styles.iconContainer}>
-        <Image source={bottomSettings} style={styles.iconImage} />
       </View>
     </View>
   );

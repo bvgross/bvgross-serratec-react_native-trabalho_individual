@@ -65,7 +65,7 @@ export const Playlist = () => {
           style={styles.searchText}
         />
       </View>
-      <Footer screen="Playlist" />
+      <Footer screen="Playlist" isNowPlaying={false} />
     </View>
   );
 }

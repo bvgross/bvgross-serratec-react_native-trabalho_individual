@@ -2,8 +2,19 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   footer: {
+    borderTopColor: "#737373",
+    borderTopWidth: 2,
     height: 85,
     backgroundColor: "#181818",
+    width: "100%",
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  footerNowPlaying: {
+    borderTopColor: "#737373",
+    borderTopWidth: 2,
+    height: 85,
+    backgroundColor: "transparent",
     width: "100%",
     flexDirection: "row",
     justifyContent: "space-between",
@@ -11,6 +22,12 @@ export const styles = StyleSheet.create({
   icon: {
     color: "#fff",
     paddingHorizontal: 4,
+  },
+  footerPagesContainer: {
+    flexDirection: "row",
+    position: "absolute",
+    width: "100%",
+    justifyContent: "space-between",
   },
   footerPages: {
     flexDirection: "row",
@@ -29,8 +46,6 @@ export const styles = StyleSheet.create({
   iconContainer: {
     alignItems: "center",
     justifyContent: "center",
-    borderTopColor: "#181818",
-    borderTopWidth: 3,
     height: 57,
     paddingHorizontal: 6,
   },
@@ -38,7 +53,9 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     borderTopColor: "#62fb9c",
-    borderTopWidth: 3,
+    borderTopWidth: 2,
+    marginTop: -2,
+    zIndex: 1,
     height: 57,
     paddingHorizontal: 6,
   },
