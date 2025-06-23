@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   footer: {
-    borderTopColor: "#737373",
+    borderTopColor: "#181818",
     borderTopWidth: 2,
     height: 85,
     backgroundColor: "#181818",
